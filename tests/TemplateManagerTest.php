@@ -39,7 +39,7 @@ class TemplateManagerTest extends PHPUnit_Framework_TestCase
         $expectedDestination = DestinationRepository::getInstance()->getById($faker->randomNumber());
         $expectedUser = ApplicationContext::getInstance()->getCurrentUser();
 
-        $quote = new Quote($faker->randomNumber(), $faker->randomNumber(), $faker->randomNumber(), $faker->date());
+        $quote = new Quote($faker->randomNumber(), $faker->randomNumber(), $expectedDestination->id, $faker->date());
 
         $template = new Template(
             1,
